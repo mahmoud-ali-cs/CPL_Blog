@@ -38,7 +38,9 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
     # Associations
-  
+    has_many :posts
+    has_many :comments
+
     # Query Interface
     # -Enums
     enum gender: {male: 0, female: 1}

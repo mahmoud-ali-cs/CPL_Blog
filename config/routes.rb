@@ -15,6 +15,9 @@ Rails.application.routes.draw do
       }
 
       resources :users, only: [:index, :show, :update]
+      resources :posts, only: [:index, :show, :update, :create] do
+        resources :comments, only: [:update, :create], shallow: true
+      end
 
       post 'users/sign_up', to: 'users#sign_up',
         as: "sign_up"

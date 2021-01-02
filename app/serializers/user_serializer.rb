@@ -32,5 +32,5 @@
 #  index_users_on_uid_and_provider      (uid,provider) UNIQUE
 #
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :first_name, :last_name, :email, :phone, :gender, :address
+  attributes :id, :first_name, :last_name, :email, :phone, :gender, :address, :created_at, :updated_at
 end
