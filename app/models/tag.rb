@@ -12,7 +12,7 @@
 #  index_tags_on_name  (name) UNIQUE
 #
 class Tag < ApplicationRecord
-  has_many :taggings
+  has_many :taggings, dependent: :destroy
   has_many :posts, through: :taggings
 
   validates_presence_of :name

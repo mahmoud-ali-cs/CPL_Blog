@@ -19,6 +19,12 @@ class Ability
       can :create, Comment
       can :update, Comment, user_id: user.id
       
+      # => Following
+      can :follow, Following
+      can :unfollow, Following, follower_id: user.id
+      can :show_followers, Following
+      can :show_followings, Following
+
     end
 
   end

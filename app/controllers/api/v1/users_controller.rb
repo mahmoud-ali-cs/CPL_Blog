@@ -89,7 +89,7 @@ class Api::V1::UsersController < ApplicationController
     @users = User.all
 
     render json: {
-      user: ActiveModelSerializers::SerializableResource.new(
+      users: ActiveModelSerializers::SerializableResource.new(
         @users, each_serializer: UserSerializer
       )
     }, status: :ok

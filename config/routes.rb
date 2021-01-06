@@ -21,11 +21,19 @@ Rails.application.routes.draw do
 
       post 'users/sign_up', to: 'users#sign_up',
         as: "sign_up"
-
       post 'users/sign_in', to: 'users#login',
         as: "sign_in"
 
-    end
+      post 'users/:id/follow', to: 'followings#follow',
+        as: "follow"
+      post 'users/:id/unfollow', to: 'followings#unfollow',
+        as: "unfollow"
+      get 'users/:id/followers', to: 'followings#show_followers',
+        as: "show_followers"
+      get 'users/:id/followings', to: 'followings#show_followings',
+        as: "show_followings"
+
+   end
   end
   
 end
